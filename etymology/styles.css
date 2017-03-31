@@ -316,6 +316,10 @@ span.action {
     width: 100%;
   }
 
+  .article {
+    padding: 15px 0;
+  }
+
   .article-header {
     width: 90vw;
     max-width: 600px;
@@ -339,11 +343,10 @@ span.action {
     bottom: 0;
     width: 100vw;
     top: initial;
-    background: #eee;
-    padding-bottom: 30px;
+    background: #EAE7D6;
   }
 
-  .stats-container, .instructions {
+  .stats-container, .instructions, .logo-lockup {
     display: none;
   }
 
