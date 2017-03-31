@@ -217,7 +217,7 @@ svg.trig-display path,
   right: 25px;
   top: 0;
   bottom: 0;
-  width: calc((90vw - 600px) - 50px);
+  width: calc((80vw - 600px) - 50px);
 }
 
 .fixed div {
@@ -276,7 +276,7 @@ span.action {
   }
 
   .fixed {
-    width: calc((95vw - 600px) - 50px);
+    width: calc((85vw - 600px) - 50px);
   }
 }
 
