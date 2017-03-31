@@ -150,25 +150,6 @@ a tspan {
   text-decoration: underline;
 }
 
-
-text  {
-  /*font-family: 'Fira Mono', monospace;*/
-  /*transform: translateX(-5px);*/
-}
-
-svg {
-  /*background: #E9E9D4;*/
-}
-
-svg.perOfficer {
-  width: 200%;
-}
-/*
-tspan {
-  font-family: 'Fira Mono', monospace;
-  transform: translateX(-5px);
-}*/
-
 .byline a {
   color: black;
 }
@@ -207,66 +188,6 @@ input {
   cursor: pointer;
 }
 
-thead {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
-  padding: 10px;
-  color: black;
-  border-bottom: solid 2px black;
-  vertical-align: bottom;
-}
-
-table {
-  margin: 0;
-  margin-top: 30px;
-  padding: 0;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin-bottom: 45px;
-  width: 100%;
-  text-align: left;
-}
-
-td {
-  padding: 10px 10px;
-  font-size: 12px;
-  font-family: 'Source Sans Pro', sans-serif;
-  vertical-align: top;
-  max-width: 75%;
-}
-th {
-  padding: 10px;
-  font-size: 14px;
-}
-
-
-.responses th:nth-child(3),
-th:nth-child(3), th:nth-child(4){
-  text-align: right;
-}
-.responses td:nth-child(3),
-.wrong-debt td:nth-child(2),
-.wrong-debt th:nth-child(2),
-.paid-debt th:nth-child(2),
-.paid-debt td:nth-child(2) {
-  text-align: right;
-}
-
-tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-tr.selected {
-  background-color: #ccc;
-}
-td.number {
-  font-family: 'Fira Mono', monospace;
-  text-align: right;
-}
-
-.float.right {
-  padding-left: 10px;
-}
 .relative {
   position: relative;
 }
@@ -275,88 +196,6 @@ td.number {
   width: 300px;
   right: calc((10vw + 600px + 150px) / -2);
 }
-
-svg.full-width,
-img.full-width {
-  width: auto;
-  max-width: 100vw;
-  margin-left: -10vw;
-  margin-top: 60px;
-  margin-bottom: 30px;
-}
-
-svg.full-width {
-  width: 250%;
-  max-width: 90vw;
-  margin-top: 30px;
-}
-
-.callout .caption {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 0;
-  display: block;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  color: black;
-}
-
-.annotations {
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-@media all and (max-width: 1200px) {
-  /* put your css styles in here */
-  .desktop {
-    display: none;
-  }
-  .relative {
-    position: static;
-  }
-  .aside {
-    position: static;
-    width: 100%;
-    right: 0;
-  }
-
-  .hed {
-    width: 100%;
-  }
-
-  .article-header {
-    width: 90vw;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .article-body {
-    width: 90vw;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .pie {
-    display: none;
-  }
-  .callout {
-    margin: 45px auto;
-  }
-
-  svg.full-width,
-  img.full-width {
-    width: auto;
-    max-width: 100vw;
-    margin-left: 0;
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-
-  svg.full-width {
-    width: 100%;
-    margin-top: 30px;
-  }
-}
-
-
 
 svg.trig-display line,
 svg.trig-display circle,
@@ -369,17 +208,6 @@ svg.trig-display path,
   stroke-width: 2px;
 }
 
-.stats-container svg {
-  height: 30px;
-  position: relative;
-  width: 100%;
-}
-
-input {
-  display: block;
-  width: 100%;
-}
-
 .fixed {
   position: fixed;
   display: flex;
@@ -389,9 +217,12 @@ input {
   right: 25px;
   top: 0;
   bottom: 0;
-  width: calc((100vw - 600px) / 2 - 50px);
+  width: calc((90vw - 600px) - 50px);
 }
 
+.fixed div {
+  width: 100%;
+}
 .fixed svg {
   cursor: crosshair;
 }
@@ -435,3 +266,82 @@ span.action {
   font-size: 12px;
   text-transform: uppercase;
 }
+
+@media all and (max-width: 1600px) {
+  .article-header {
+    margin-left: 5vw;
+  }
+  .article-body {
+    margin-left: 5vw;
+  }
+
+  .fixed {
+    width: calc((95vw - 600px) - 50px);
+  }
+}
+
+
+@media all and (max-width: 1200px) {
+  /* put your css styles in here */
+  .article-header {
+    margin-left: 10px;
+    width: 500px;
+  }
+  .article-body {
+    margin-left: 10px;
+    width: 500px;
+  }
+
+  .fixed {
+    width: calc((500px - 10px) - 50px);
+  }
+}
+
+
+@media all and (max-width: 1000px) {
+  /* put your css styles in here */
+  .desktop {
+    display: none;
+  }
+  .relative {
+    position: static;
+  }
+  .aside {
+    position: static;
+    width: 100%;
+    right: 0;
+  }
+
+  .hed {
+    width: 100%;
+  }
+
+  .article-header {
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .article-body {
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 80vh;
+  }
+
+  .fixed > div {
+    width: 45%;
+  }
+
+  .fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    top: initial;
+    background: #eee;
+    padding-bottom: 30px;
+  }
+
+}
+
