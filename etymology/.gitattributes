@@ -1,0 +1,2 @@
+data/consumer-complaints-small.csv filter=lfs diff=lfs merge=lfs -text
+data/consumer-complaints.csv filter=lfs diff=lfs merge=lfs -text

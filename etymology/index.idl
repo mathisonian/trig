@@ -1,0 +1,71 @@
+[IdyllLogo /]
+
+[Header
+  title:"The Etymology of Trig Functions"
+  author:"Matthew Conlen"
+  authorLink:"https://twitter.com/mathisonian" /]
+
+[section className:"article-body"]
+
+[var name:"theta" value:`Math.PI / 4` /]
+[var name:"stage" value:`` /]
+
+[i]Ed. Note: Mouseover the blue links to see concepts demonstrated visually.[/i]
+
+You may have learned about trigonometric functions such as **sine** and **cosine** as being defined by
+the ratios of sides of a triangle (*SOHCAHTOA*),
+or in terms of points and lines related to the unit circle. For me, it didn't totally click until I started to think visually about
+inscribing a triangle inside of a circle.
+
+For example, you can think about the sine function as
+measuring [action onMouseOver:`stage = 'sin'`]the distance from the x-axis[/action] of a point
+on the unit circle at a particular angle. The sign (+/-) of that value indicates if the point lies above
+or below the axis. Similarly the cosine can be
+thought of as measuring [action onMouseOver:`stage = 'cos'`]the distance from the y-axis[/action] of
+that same point.
+
+It is useful to note that the cosine of an angle is the same as the sine of the complement of the angle. In other words,
+it is the same operation as sine, just with respect to the y-axis instead of the x-axis.
+
+The word *sine* originally came from the latin *sinus*, meaning "bay" or "inlet". However, it had a
+long path to get there. The [link text:"earliest known reference" href:"http://jeff560.tripod.com/s.html" /] to the sine function is from [link text:"Aryabhata the Elder" href:"https://en.wikipedia.org/wiki/Aryabhata" /],
+who used both *ardha-jya* (half-chord) and *jya* (chord) to mean *sine* in
+Aryabhatiya, a Sanskrit text finished in 499 CE.
+
+Jya, meaning chord, became *jiba* in Arabic, and was abbreviated as just *jb*. When the term was translated to latin in the
+twelfth century, *jb* was incorrectly read as *jaib* (meaning "bay" or "inlet"), and thus translated as *sinus*.
+
+The sine function has a [action onMouseOver:`stage='chord'; theta = Math.PI / 4;`]direct connection to chords on a circle[/action]. Pick two points on the unit circle,
+then the length of the line connecting the two points is exactly twice the value of the sine of half the
+anlge between them. That is, `chord_length(θ) / 2 = sin(θ / 2)`.
+
+ **Tangent** comes from the latin *tangere*, the verb meaning "to touch". A line tangent to a circle intersects it at exactly one point.
+From this, a [action onMouseOver:`stage = 'tan'`]geometric construction of the tangent function[/action] makes a lot of sense: take the line tangent from a point on the unit
+circle and calculate the distance along that line from the point of intersection with the circle, to the point of
+intersection with the x-axis. Similarly, the distance from that same point on the unit circle [action onMouseOver:`stage = 'cotan'`]to the y-axis[/action] is
+the value of the **cotangent** function.
+
+The origin of **secant** can be traced to latin as well. It comes from the latin word *secare*, meaning "to cut".
+By definition a secant line on a circle is any line that intersects it in two places, you can think of this
+line as cutting the circle in two pieces. The secant function is the distance [action onMouseOver:`stage = 'sec'`]from the origin
+to the point where the tangent line intercepts the x-axis[/action]. Note that if this secant line is extended, it cuts the
+unit circle neatly in half. Again, the **cosecant** can be thought of as being the same as [action onMouseOver:`stage = 'cosec'`]the same function
+with respect to the y-axis[/action].
+
+[desktop]
+If you want to explore more move your mouse over the unit circle to the right. Move your mouse to change the displayed angle and select different
+trigonometric functions. Click to lock in a particular angle or function.
+[/desktop]
+
+[fixed]
+
+[TrigDisplay
+  theta:theta
+  stage:stage /]
+
+[/fixed]
+
+[IdyllFooter markupUrl:"" /]
+
+[/section]
+
