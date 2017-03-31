@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5,h6{
   font-weight: bold;
 }
 
-p {
+p, .article-body {
   font-size: 1.15rem;
   line-height: 1.75rem;
 }
@@ -228,10 +228,10 @@ svg.trig-display path,
 }
 
 span.action {
-  border-color: #350bd5;
+  border-color: #5601FF;
   border-width: 2px;
   border-style: none none solid none;
-  color: #350bd5;
+  color: #5601FF;
   /*font-size: 0.9em;*/
   padding: -4px 5px;
   margin: 0 5px;
