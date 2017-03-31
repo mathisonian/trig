@@ -343,5 +343,9 @@ span.action {
     padding-bottom: 30px;
   }
 
+  .stats-container, .instructions {
+    display: none;
+  }
+
 }
 
