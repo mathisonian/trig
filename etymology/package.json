@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "idyll index.idl --css styles.css",
-    "build": "mkdir ../build; mkdir ../build/etymology; cp index.html ../build/etymology/; cp styles.css ../build/etymology/; cp -r fonts ../build/etymology/; cp -r images ../build/etymology/; idyll index.idl --build | uglifyjs > ../build/etymology/index.js",
+    "build": "mkdir ../build; mkdir ../build/etymology; cp _index.html ../build/etymology/index.html; cp styles.css ../build/etymology/; cp -r fonts ../build/etymology/; cp -r images ../build/etymology/; idyll index.idl --build | uglifyjs > ../build/etymology/index.js",
     "deploy": "gh-pages -d ../build",
     "disc": "discify build/index.js > disc.html && open disc.html"
   },
