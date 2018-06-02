@@ -37,7 +37,7 @@ twelfth century, *jb* was incorrectly read as *jaib* (meaning "bay" or "inlet"),
 
 The sine function has a [action onMouseOver:`stage='chord'; theta = Math.PI / 4;`]direct connection to chords on a circle[/action]. Pick two points on the unit circle,
 then the length of the line connecting the two points is exactly twice the value of the sine of half the
-anlge between them. That is, `chord_length(θ) / 2 = sin(θ / 2)`.
+angle between them. That is, `chord_length(θ) / 2 = sin(θ / 2)`.
 
  **Tangent** comes from the latin *tangere*, the verb meaning "to touch". A line tangent to a circle intersects it at exactly one point.
 From this, a [action onMouseOver:`stage = 'tan'`]geometric construction of the tangent function[/action] makes a lot of sense: take the line tangent from a point on the unit
