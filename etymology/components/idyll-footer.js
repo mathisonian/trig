@@ -1,8 +1,7 @@
 
 const React = require('react');
-const IdyllComponent = require('idyll-component');
 
-class Logo extends IdyllComponent {
+class Logo extends React.Component {
   render() {
     return (
       <p>

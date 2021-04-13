@@ -2,15 +2,17 @@
   "name": "consumer-complaints",
   "version": "1.0.0",
   "scripts": {
-    "start": "idyll index.idl --css styles.css",
+    "start": "idyll",
     "build": "mkdir ../build; mkdir ../build/etymology; cp _index.html ../build/etymology/index.html; cp styles.css ../build/etymology/; cp -r fonts ../build/etymology/; cp -r images ../build/etymology/; idyll index.idl --build | uglifyjs > ../build/etymology/index.js",
-    "deploy": "gh-pages -d ../build",
-    "disc": "discify build/index.js > disc.html && open disc.html"
+    "deploy": "gh-pages -d ../build"
+  },
+  "idyll": {
+    "css": "./styles.css"
   },
   "dependencies": {
     "csv-parser": "^1.11.0",
     "d3-selection": "^1.0.5",
-    "idyll": "^1.0.0",
+    "idyll": "^5.0.0",
     "react-inlinesvg": "^0.5.5",
     "react-vega-lite": "0.0.1",
     "reactable": "^0.14.1",
