@@ -1,7 +1,4 @@
 const React = require('react');
-const IdyllComponent = require('idyll-component');
-const Animate = require('victory-core').VictoryAnimation;
-const Line = require('victory').VictoryLine;
 const d3 = require('d3-scale');
 const d3Shape = require('d3-shape');
 const d3Arr = require('d3-array');
@@ -51,7 +48,7 @@ const formatNumber = (x, n) => {
   return x.toFixed(n);
 };
 
-class TrigDisplay extends IdyllComponent {
+class TrigDisplay extends React.Component {
 
   constructor(props) {
     super(props);
@@ -109,14 +106,14 @@ class TrigDisplay extends IdyllComponent {
     loc.x -= CENTER;
     loc.y = CENTER - loc.y;
     const theta = Math.atan2(loc.y, loc.x);
-    this.updateProps({
+    this.props.updateProps({
       theta: theta
     });
   }
 
   handleStatMouseover(name) {
     return (evt) => {
-      this.updateProps({
+      this.props.updateProps({
         stage: name
       });
     }
@@ -137,7 +134,7 @@ class TrigDisplay extends IdyllComponent {
   }
 
   handleMouseLeaveStates(evt) {
-    this.updateProps({
+    this.props.updateProps({
       stage: this.state.fFixed
     });
   }
@@ -228,20 +225,11 @@ const overlayGenerator = (defaultState, initial, end, color) => {
         y2: d3.scaleLinear().range([initialState.y2(theta), endState.y2(theta)])
       };
       return (
-        <Animate data={{progress: this.state.progress}}>
-          {
-            ((tweenedProps, animationInfo) => {
-              const { progress } = tweenedProps;
-              return (
-                <g ref={() => { this.setState({progress: 1}) }}>
-                  <line  style={{stroke: color}} x1={scales.x1(progress)} y1={scales.y1(progress)} x2={scales.x2(progress)} y2={scales.y2(progress)} />
-                  <circle style={{fill: color}} cx={scales.x1(progress)} cy={scales.y1(progress)} r={0.01} />
-                  <circle style={{fill: color}} cx={scales.x2(progress)} cy={scales.y2(progress)} r={0.01} />
-                </g>
-              );
-            })
-          }
-        </Animate>
+        <g ref={() => { this.setState({progress: 1}) }}>
+          <line  style={{stroke: color}} x1={scales.x1(this.state.progress)} y1={scales.y1(this.state.progress)} x2={scales.x2(this.state.progress)} y2={scales.y2(this.state.progress)} />
+          <circle style={{fill: color}} cx={scales.x1(this.state.progress)} cy={scales.y1(this.state.progress)} r={0.01} />
+          <circle style={{fill: color}} cx={scales.x2(this.state.progress)} cy={scales.y2(this.state.progress)} r={0.01} />
+        </g>
       );
     }
   }
@@ -346,21 +334,11 @@ class ChordOverlay extends React.PureComponent {
         <line x1={CENTER} y1={CENTER} x2={CENTER + Math.cos(theta)} y2={CENTER + Math.sin(theta)} style={{strokeWidth: 1}} />
         <line x1={CENTER + Math.cos(theta)} y1={CENTER - Math.sin(theta)} x2={CENTER + Math.cos(theta)} y2={CENTER + Math.sin(theta)} style={{strokeWidth: 1, stroke: 'gray'}} />
 
-        <Animate data={{progress: this.state.progress}}>
-          {
-            ((tweenedProps, animationInfo) => {
-              const { progress } = tweenedProps;
-
-              return (
-                <g ref={() => { this.setState({progress: 1}) }}>
-                  <line  style={{stroke: 'orange'}} x1={scales.x1(progress)} y1={scales.y1(progress)} x2={scales.x2(progress)} y2={scales.y2(progress)} />
-                  <circle style={{fill: 'orange'}} cx={scales.x1(progress)} cy={scales.y1(progress)} r={0.01} />
-                  <circle style={{fill: 'orange'}} cx={scales.x2(progress)} cy={scales.y2(progress)} r={0.01} />
-                </g>
-              );
-            })
-          }
-        </Animate>
+        <g ref={() => { this.setState({progress: 1}) }}>
+          <line  style={{stroke: 'orange'}} x1={scales.x1(this.state.progress)} y1={scales.y1(this.state.progress)} x2={scales.x2(this.state.progress)} y2={scales.y2(this.state.progress)} />
+          <circle style={{fill: 'orange'}} cx={scales.x1(this.state.progress)} cy={scales.y1(this.state.progress)} r={0.01} />
+          <circle style={{fill: 'orange'}} cx={scales.x2(this.state.progress)} cy={scales.y2(this.state.progress)} r={0.01} />
+        </g>
       </g>
     );
   }
